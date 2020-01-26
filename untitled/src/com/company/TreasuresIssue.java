@@ -37,23 +37,30 @@ public class TreasuresIssue {
             int M = scanner.nextInt();
             int[] available = new int[M];
             for (int j = 0; j < M; j++) {
-                available[i] = scanner.nextInt();
+                available[j] = scanner.nextInt();
             }
+            dfs(needed, needed_visited, available, mines_vis, Pcost, i, N);
         }
     }
 
-    public static void dfs(int[] needed, boolean[] n_visited, int[] available, boolean[] mines_vis, int N) {
-        for (int i = 0; i < N; i++) {
-            mines_vis[i] = true;
-            for (int j = 0; j < needed.length; j++) {
-                int element = needed[j];
-                if (checkElementInArray(available, element) && !mines_vis[i]) {
-                    n_visited[j] = true;
+    public static void dfs(int[] needed, boolean[] n_visited, int[] available, boolean[] mines_vis, int[] Pcost, int LEVEL, int N) {
+        System.out.println("LEVEL:" + LEVEL);
+        if (!allVisited(n_visited)) {
+            if (LEVEL < N) {
+                mines_vis[LEVEL] = true;
+                int sum = 0;
+                for (int i = 0; i < needed.length; i++) {
+                    int element = needed[i];
+                    if (!n_visited[i] && checkElementInArray(available, element)) {
+                        n_visited[i] = true;
+                        sum = Pcost[LEVEL];
+                    }
                 }
+                answer += sum;
+                System.out.println(answer);
             }
         }
     }
-
 
     public static boolean checkElementInArray(int[] array, int element) {
         for (int value : array) {
@@ -62,5 +69,14 @@ public class TreasuresIssue {
             }
         }
         return false;
+    }
+
+    public static boolean allVisited(boolean[] arr) {
+        for (boolean b : arr) {
+            if (!b) {
+                return false;
+            }
+        }
+        return true;
     }
 }
