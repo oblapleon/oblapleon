@@ -1,9 +1,7 @@
 package setup;
 
 import io.restassured.RestAssured;
-import listener.TestCaseObject;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 

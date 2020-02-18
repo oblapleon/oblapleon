@@ -3,14 +3,12 @@ package test;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 import jsons.SubmitReport;
-import listener.TestCaseObject;
+import setup.TestCaseObject;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import setup.BaseTest;
 import test.prerequests.Prerequests;
-
-import java.util.ArrayList;
 
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.*;
