@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="functional tests api level">
+    <test name="Authorization test">
+        <classes>
+            <class name="test.AuthTokenTest"/>
+        </classes>
+    </test>
+    <test name="Submit report test">
+        <classes>
+            <class name="test.SubmitReportTest"/>
+        </classes>
+    </test>
+
+</suite>

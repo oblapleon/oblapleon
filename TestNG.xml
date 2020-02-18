@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--Здесь может быть произвольное количество тест сьютов-->
+<suite name="My site Api tests">
+    <suite-files>
+        <suite-file path="src/test/resources/mysite_api.xml"/>
+    </suite-files>
+</suite>
