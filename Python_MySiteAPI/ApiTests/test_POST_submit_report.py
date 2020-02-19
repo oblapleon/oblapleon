@@ -20,7 +20,8 @@ def test_check_report_submitted_priority_value_1():
     url = "http://mysite.com/api/submit_report/"
     data = {"priority": 1,
             "report": "sometext"}
-    headers = {'Content-type': 'application/json', "Authorization": token}
+    headers = {'Content-type': 'application/json', 
+               "Authorization": token}
     response = requests.post(url, json=data, headers=headers)
     assert response.status_code == 200
 
@@ -30,7 +31,8 @@ def test_check_report_submitted_priority_value_5():
     url = "http://mysite.com/api/submit_report/"
     data = {"priority": 5,
             "report": "sometext"}
-    headers = {'Content-type': 'application/json', "Authorization": "token " + token}
+    headers = {'Content-type': 'application/json', 
+               "Authorization": token}
     response = requests.post(url, json=data, headers=headers)
     assert response.status_code == 200
 
