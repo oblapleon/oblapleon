@@ -88,4 +88,4 @@ def test_check_report_not_submitted_empty_request_body():
     headers = {'Content-type': 'application/json',
                "Authorization": "token " + token}
     response = requests.post(url, json=data, headers=headers)
-    assert response.status_code == 403
+    assert response.status_code == 400
