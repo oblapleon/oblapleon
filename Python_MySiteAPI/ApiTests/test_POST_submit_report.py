@@ -43,7 +43,7 @@ def test_check_report_not_submitted_priority_value_0():
     data = {"priority": 0,
             "report": "sometext"}
     headers = {'Content-type': 'application/json',
-               "Authorization": "token " + token}
+               "Authorization": token}
     response = requests.post(url, json=data, headers=headers)
     assert response.status_code == 400
 
@@ -54,7 +54,7 @@ def test_check_report_not_submitted_priority_value_6():
     data = {"priority": 6,
             "report": "sometext"}
     headers = {'Content-type': 'application/json',
-               "Authorization": "token " + token}
+               "Authorization": token}
     response = requests.post(url, json=data, headers=headers)
     assert response.status_code == 400
 
@@ -65,7 +65,7 @@ def test_check_report_not_submitted_report_not_a_string():
     data = {"priority": 5,
             "report": 1111}
     headers = {'Content-type': 'application/json',
-               "Authorization": "token " + token}
+               "Authorization": token}
     response = requests.post(url, json=data, headers=headers)
     assert response.status_code == 400
 
@@ -86,6 +86,6 @@ def test_check_report_not_submitted_empty_request_body():
     url = "http://mysite.com/api/submit_report/"
     data = {}
     headers = {'Content-type': 'application/json',
-               "Authorization": "token " + token}
+               "Authorization": token}
     response = requests.post(url, json=data, headers=headers)
     assert response.status_code == 400
